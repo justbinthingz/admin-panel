@@ -5,7 +5,7 @@
   "main": "./backend/server.js",
   "type": "module",
   "scripts": {
-    "start": "node /backend/server.js",
+    "start": "node ./backend/server.js",
     "server": "nodemon ./backend/server.js --ignore client",
     "build": "cd frontend && npm run build",
     "install-client": "cd frontend && npm install",
