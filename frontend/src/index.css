@@ -1,0 +1,89 @@
+*{
+  font-family: auto;
+
+}
+body {
+  margin: 0;
+  height: 100%;
+  font-family: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow: hidden;
+
+}
+
+.login_banner{
+  background: url('./assets/banner.png') 50% no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
+
+.login_form{
+  padding: 150px;
+  font-family: auto;
+}
+
+.login_form_item{
+  width: 70%;
+  display: table;
+  margin: auto;
+  margin-top: 20px;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  min-height: 100vh !important;
+  z-index: 100;
+  padding: 48px 0 0;
+  box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
+  text-align: center;
+}
+#sidebar-wrapper{
+  min-height: 100vh !important;
+  width: 100vw;
+  margin-left: -1rem;
+  -webkit-transition: margin .25s ease-out;
+  -moz-transition: margin .25s ease-out;
+  -o-transition: margin .25s ease-out;
+  transition: margin .25s ease-out;
+}
+#sidebar-wrapper .sidebar-heading {
+  padding: 0.875rem 1.25rem;
+  font-size: 1.2rem;
+}
+
+#page-content-wrapper {
+  min-width: 0;
+  width: 100%;
+  position: relative;
+}
+
+.sidenav_logo{
+  height: 100%;
+  width: 100%;
+  margin-top: -48px;
+}
+
+
+.sidenav_items{
+  color: gray;
+
+}
+
+.sidenav_items:hover{
+  color: rgb(25, 231, 204);
+  text-decoration: none;
+}
+
+.button_color{
+  background: linear-gradient(to right, #1a5380, #26d0ce); 
+  width: 12%;
+}
+
+.table_scroll {
+  height: 78vh;
+  overflow-y: scroll;
+}
