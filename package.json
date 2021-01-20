@@ -1,0 +1,25 @@
+{
+  "name": "adminPanel",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./backend/server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node /backend/server.js",
+    "server": "nodemon ./backend/server.js --ignore client",
+    "client": "npm start --prefix frontend",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "bindu",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.11.8"
+  },
+  "devDependencies": {
+    "concurrently": "^5.3.0"
+  }
+}
