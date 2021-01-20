@@ -1,10 +1,11 @@
+const functions = require('firebase-functions');
 const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path'); // easy to work with path and directries
 const http = require('http');
 const app = express();
 
-const api = require('./server/routes/api')
+const api = require('../server/routes/api')
 
 //Parsers
 app.use(bodyParser.json());
@@ -14,7 +15,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use('/api', api);
 
 app.get('/hello', (req, res) => {
-  res.send("welcome it workds")
+    res.send("welcome it workds")
 })
 //serve static assets if in prod
 // if (process.env.NODE_ENV === "production") {
@@ -33,5 +34,10 @@ app.set('port', port);
 const server = http.createServer(app);
 
 server.listen(port, () => {
-  console.log('Ruuning on localhost:', port);
+    console.log('Ruuning on localhost:', port);
 });
+
+// // Create and Deploy Your First Cloud Functions
+// // https://firebase.google.com/docs/functions/write-firebase-functions
+//
+exports.app = functions.https.onRequest(app);
