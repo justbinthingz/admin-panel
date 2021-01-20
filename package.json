@@ -4,6 +4,9 @@
   "description": "",
   "main": "./backend/server.js",
   "type": "module",
+  "engines": {
+    "node": "14.15.1"
+  },
   "scripts": {
     "start": "node ./backend/server.js",
     "server": "nodemon ./backend/server.js --ignore client",
