@@ -6,8 +6,8 @@ import {
 
 } from "../constants/userConstants"
 
-// const url = "https://mern-apanel.herokuapp.com"
-const url = "http://localhost:3001"
+const url = "https://mern-apanel.herokuapp.com"
+// const url = "http://localhost:3001"
 
 export const login = (email, password) => async (dispatch) => {
     try {

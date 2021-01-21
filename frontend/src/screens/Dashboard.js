@@ -6,6 +6,7 @@ import Profile from '../components/Profile'
 import SideNav from '../components/SideNav'
 import AdminUsers from '../components/AdminUsers'
 import { Route } from 'react-router-dom'
+import { Redirect } from 'react-router-dom'
 
 const authPages = {
     "admin": [{ "path": "profile", "name": "Profile" }, { "path": "admin", "name": "Users" }],
@@ -30,7 +31,7 @@ const Dashboard = ({ history }) => {
                             <Route exact path='/dashboard/profile' userInfo={userInfo} render={(props) => <Profile {...props} userInfo={userInfo} />} />
                         </Col>
                     </Row>
-                </Container> : history.push('/')
+                </Container> : <Redirect to='/login' />
             }
         </>
 
