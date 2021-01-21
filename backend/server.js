@@ -24,18 +24,6 @@ app.use(function (req, res, next) {
 //set our api routes
 app.use('/api', api);
 
-app.get('/hello', (req, res) => {
-  res.send("welcome it workds")
-})
-//serve static assets if in prod
-// if (process.env.NODE_ENV === "production") {
-//   app.use(express.static(path.join(__dirname, '../frontend/build')));
-
-//   app.get('*', (req, res) => {
-//     res.sendFile(path.resolve(__dirname, '../frontend', 'build/index.html'));
-//   })
-// }
-
 //set port
 const port = process.env.PORT || '3001';
 app.set('port', port);

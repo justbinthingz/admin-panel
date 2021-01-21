@@ -15,7 +15,6 @@ const authPages = {
 const Dashboard = ({ history }) => {
     const userLogin = useSelector(state => state.userLogin)
     const { error, userInfo } = userLogin
-    console.log("dash", userInfo, userLogin)
     return (
 
         <>

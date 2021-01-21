@@ -29,7 +29,8 @@ router.get('/getAllUsers', function (req, res) {
 
 router.post('/login', function (req, res) {
   console.log("in login")
-  user.find({ email: req.body.email, password: req.body.password })
+  // user.find({ email: req.body.email, password: req.body.password })
+  user.find({ email: req.body.email })
     .exec(function (err, data) {
       if (err) { console.log("object", err); res.status(400).json({ message: "Network Error during login" }) }
       else {
