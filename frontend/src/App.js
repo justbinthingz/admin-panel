@@ -9,7 +9,7 @@ function App() {
 
     <>
       <Switch>
-        <Route exact path={["/login", "/", "**"]} component={Login} ></Route>
+        <Route exact path={["/login", "/"]} component={Login} ></Route>
         <Route exact path='/dashboard/*' component={Dashboard} ></Route>
       </Switch>
     </>
