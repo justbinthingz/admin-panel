@@ -19,6 +19,7 @@ const AdminUsers = () => {
 
     const usersList = useSelector(state => state.usersList)
     const newUser = useSelector(state => state.newUser)
+
     useEffect(() => {
         dispatch(getUserList())
     }, [dispatch, newUser])
@@ -78,19 +79,19 @@ const AdminUsers = () => {
                     <Form onSubmit={submitHandler} className="mt-3">
                         <Form.Group controlId="email">
                             <Form.Label>Email Address</Form.Label>
-                            <Form.Control type="email" placeholder="Enter email-id" value={email} onChange={(e) => setEmail(e.target.value)}></Form.Control>
+                            <Form.Control type="email" required placeholder="Enter email-id" value={email} onChange={(e) => setEmail(e.target.value)}></Form.Control>
                         </Form.Group>
                         <Form.Group controlId="name">
                             <Form.Label>Name </Form.Label>
-                            <Form.Control type="text" placeholder="Enter Name" value={name} onChange={(e) => setName(e.target.value)}></Form.Control>
+                            <Form.Control type="text" required placeholder="Enter Name" value={name} onChange={(e) => setName(e.target.value)}></Form.Control>
                         </Form.Group>
                         <Form.Group controlId="userName">
                             <Form.Label>User Name </Form.Label>
-                            <Form.Control type="text" placeholder="Enter Username" value={userName} onChange={(e) => setUserName(e.target.value)}></Form.Control>
+                            <Form.Control type="text" required placeholder="Enter Username" value={userName} onChange={(e) => setUserName(e.target.value)}></Form.Control>
                         </Form.Group>
-                        <Form.Group controlId="userType">
+                        <Form.Group controlId="userType" required>
                             <Form.Label className="mr-3">User Type </Form.Label>
-                            <Form.Check inline label="Admin" name="usertype" type="radio" id="1" value="admin" onChange={(e) => { setUserType(e.target.value) }} />
+                            <Form.Check required inline label="Admin" name="usertype" type="radio" id="1" value="admin" onChange={(e) => { setUserType(e.target.value) }} />
                             <Form.Check inline label="User" name="usertype" type="radio" id="2" value="user" onChange={(e) => setUserType(e.target.value)} />
                         </Form.Group>
                         <Button type="submit" variant="info">Add user</Button>
