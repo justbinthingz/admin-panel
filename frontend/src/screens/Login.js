@@ -17,7 +17,6 @@ const Login = () => {
     const { error, userInfo } = userLogin
 
     useEffect(() => {
-        console.log("object", userInfo)
         if (userInfo) {
             history.push('/dashboard/profile')
         }
