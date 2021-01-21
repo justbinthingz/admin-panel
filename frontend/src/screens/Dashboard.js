@@ -1,4 +1,5 @@
 import React from 'react'
+import './Dashboard.css'
 import { useSelector } from 'react-redux'
 import { Row, Col, Container, Alert } from 'react-bootstrap'
 import Profile from '../components/Profile'
@@ -14,11 +15,12 @@ const authPages = {
 const Dashboard = ({ history }) => {
     const userLogin = useSelector(state => state.userLogin)
     const { error, userInfo } = userLogin
+    console.log("dash", userInfo, userLogin)
     return (
 
         <>
             {error && <Alert variant="danger">{error}</Alert>}
-            { userInfo ?
+            { userInfo && userInfo !== undefined ?
                 <Container fluid>
                     <Row>
                         <Col xs={2} id="sidebar-wrapper">

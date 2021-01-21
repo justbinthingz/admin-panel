@@ -1,5 +1,5 @@
 import React from 'react'
-import { Form, Button, Row, Col, Alert, Container } from 'react-bootstrap'
+import { Container } from 'react-bootstrap'
 
 const Profile = ({ userInfo }) => {
     return (

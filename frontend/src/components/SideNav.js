@@ -2,14 +2,15 @@ import React from 'react'
 import { Nav, NavItem } from "react-bootstrap";
 import { Link } from 'react-router-dom';
 import banner from '../assets/side_logo.png'
+import './SideNav.css'
 
 const SideNav = ({ pages }) => {
-
+    console.log("object", pages)
     return (
         <>
             <Nav className="col-md-12 d-none d-md-block sidebar"
                 defaultActiveKey="/dashboard/profile">
-                <img src={banner} className="sidenav_logo" />
+                <img src={banner} alt="logo " className="sidenav_logo" />
                 <div className="sidebar-sticky"></div>
                 <br></br>
                 {

@@ -17,12 +17,14 @@ const Login = () => {
     const { error, userInfo } = userLogin
 
     useEffect(() => {
+        console.log("here actions", userInfo)
 
         if (userInfo) {
+            console.log("tru=ying to push", userInfo)
             history.push('/dashboard/profile')
         }
 
-    }, [userInfo])
+    }, [userInfo, history])
 
 
     const submitHandler = (e) => {

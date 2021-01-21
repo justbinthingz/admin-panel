@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react'
-import { Form, Button, Row, Col, Alert, Container, Table, Modal } from 'react-bootstrap'
+import { Form, Button, Alert, Container, Table, Modal } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
 import { getUserList, addUser } from '../actions/userAction'
-
+import Loader from '../components/Loader'
 
 const AdminUsers = () => {
 
@@ -34,11 +34,11 @@ const AdminUsers = () => {
             <div className="d-flex flex-row-reverse">
                 <Button variant="primary" className="button_color" onClick={handleShow}>Add User</Button>
             </div>
-            <h6 className="bg-light p-3 mt-3">ALL-USERS</h6>
+            <h6 className="bg-light p-3 mt-3"><strong>ALL-USERS</strong></h6>
             {newUser.error && <Alert variant="danger">{newUser.error}</Alert>}
 
             {
-                usersList.loading == undefined || usersList.loading ? <>loading</> :
+                usersList.loading === undefined || usersList.loading ? (<Loader></Loader>) :
                     <div className="table_scroll">
                         <Table striped bordered hover>
                             <thead>
@@ -97,7 +97,7 @@ const AdminUsers = () => {
                     </Form>
                 </Modal.Body>
             </Modal>
-        </Container>
+        </Container >
     )
 }
 

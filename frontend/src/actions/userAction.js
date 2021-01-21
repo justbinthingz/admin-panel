@@ -6,21 +6,21 @@ import {
 
 } from "../constants/userConstants"
 
-const url = "http://localhost:3000"
+const url = "https://mern-apanel.herokuapp.com"
+// const url = "http://localhost:3001"
 
 export const login = (email, password) => async (dispatch) => {
     try {
         dispatch({
             type: USER_LOGIN_REQUEST
         })
-
         const config = {
             headers: {
-                'Content-Type': 'appliction/json'
-            }
+                'Content-Type': 'application/json',
+                'Accept': 'application/json',
+            },
         }
-        // const { data } = await axios.post(`${url}/api/login`, { email, password, config })
-        const { data } = await axios.post(`/api/login`, { email, password, config })
+        const { data } = await axios.post(`${url}/api/login`, { email, password }, config)
         dispatch({
             type: USER_LOGIN_SUCCESS,
             payload: data
@@ -31,13 +31,13 @@ export const login = (email, password) => async (dispatch) => {
     }
 }
 
-export const getUserList = (email, password) => async (dispatch) => {
+export const getUserList = () => async (dispatch) => {
     try {
         dispatch({
             type: USERS_LIST_REQUEST
         })
 
-        const { data } = await axios.get(`/api/getAllUsers`)
+        const { data } = await axios.get(`${url}/api/getAllUsers`)
         dispatch({
             type: USERS_LIST_SUCCESS,
             payload: data
@@ -54,7 +54,7 @@ export const addUser = (email, name, userName, userType) => async (dispatch) => 
             type: USER_ADD_REQUEST
         })
 
-        const { data } = await axios.post(`/api/addUser`, { email, name, userName, userType })
+        const { data } = await axios.post(`${url}/api/addUser`, { email, name, userName, userType })
         dispatch({
             type: USER_ADD_SUCCESS,
             payload: data
